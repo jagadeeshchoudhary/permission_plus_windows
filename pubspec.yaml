@@ -1,0 +1,34 @@
+name: permission_plus_windows
+description: "Windows implementation of the permission_plus plugin."
+
+version: 0.0.1
+
+homepage: https://github.com/jagadeeshchoudhary/permission_plus_windows
+repository: https://github.com/jagadeeshchoudhary/permission_plus_windows/tree/main
+issue_tracker: https://github.com/jagadeeshchoudhary/permission_plus_windows/issues
+
+
+environment:
+  sdk: ^3.12.0
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  plugin:
+    platforms:
+      windows:
+        pluginClass: PermissionPlusWindowsPluginCApi
+
+topics:
+  - permissions
+  - windows
+  - plugin
