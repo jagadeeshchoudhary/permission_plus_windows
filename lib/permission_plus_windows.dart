@@ -9,7 +9,7 @@ import 'src/generated/permission_plus_api.g.dart';
 /// communication with the C++ host.
 class PermissionPlusWindows extends PermissionPlusPlatform {
   PermissionPlusWindows({@visibleForTesting PermissionPlusHostApi? api})
-      : _api = api ?? PermissionPlusHostApi();
+    : _api = api ?? PermissionPlusHostApi();
 
   final PermissionPlusHostApi _api;
 
@@ -78,18 +78,15 @@ class PermissionPlusWindows extends PermissionPlusPlatform {
 
 /// Converts platform interface [PermissionType] to Pigeon message enum.
 extension _PermissionTypeToPigeon on PermissionType {
-  PermissionTypeMessage toPigeon() =>
-      PermissionTypeMessage.values[index];
+  PermissionTypeMessage toPigeon() => PermissionTypeMessage.values[index];
 }
 
 /// Converts Pigeon [PermissionTypeMessage] back to platform interface type.
 extension _PermissionTypeMessageToPlatform on PermissionTypeMessage {
-  PermissionType toPlatformType() =>
-      PermissionType.values[index];
+  PermissionType toPlatformType() => PermissionType.values[index];
 }
 
 /// Converts Pigeon [PermissionStatusMessage] to platform interface type.
 extension _PermissionStatusMessageToPlatform on PermissionStatusMessage {
-  PermissionStatus toPlatform() =>
-      PermissionStatus.values[index];
+  PermissionStatus toPlatform() => PermissionStatus.values[index];
 }

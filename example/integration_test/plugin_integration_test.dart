@@ -14,13 +14,11 @@ import 'package:permission_plus_windows/permission_plus_windows.dart';
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('checkPermission returns a valid status',
-      (WidgetTester tester) async {
+  testWidgets('checkPermission returns a valid status', (
+    WidgetTester tester,
+  ) async {
     final plugin = PermissionPlusWindows();
     final status = await plugin.checkPermission(PermissionType.camera);
-    expect(
-      PermissionStatus.values.contains(status),
-      true,
-    );
+    expect(PermissionStatus.values.contains(status), true);
   });
 }

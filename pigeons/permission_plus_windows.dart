@@ -9,7 +9,6 @@ import 'package:pigeon/pigeon.dart';
     cppOptions: CppOptions(namespace: 'permission_plus_windows'),
   ),
 )
-
 /// Mirror of `PermissionType` from `permission_plus_platform_interface`.
 enum PermissionTypeMessage {
   camera,
@@ -54,20 +53,14 @@ enum PermissionStatusMessage {
 }
 
 /// Mirror of `LocationAccuracy` from `permission_plus_platform_interface`.
-enum LocationAccuracyMessage {
-  reduced,
-  precise,
-}
+enum LocationAccuracyMessage { reduced, precise }
 
 /// Represents a single entry in a permission → status map.
 ///
 /// Used for returning results from [requestPermissions], since Pigeon
 /// does not support `Map` with enum keys directly.
 class PermissionStatusMapEntry {
-  PermissionStatusMapEntry({
-    required this.permission,
-    required this.status,
-  });
+  PermissionStatusMapEntry({required this.permission, required this.status});
 
   final PermissionTypeMessage permission;
   final PermissionStatusMessage status;
