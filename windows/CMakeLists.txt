@@ -44,8 +44,9 @@ set_target_properties(${PLUGIN_NAME} PROPERTIES
   CXX_VISIBILITY_PRESET hidden)
 target_compile_definitions(${PLUGIN_NAME} PRIVATE FLUTTER_PLUGIN_IMPL)
 
-# Enable C++17 for WinRT support
-set_target_properties(${PLUGIN_NAME} PROPERTIES CXX_STANDARD 17)
+# Enable C++20 for WinRT support (C++20 <coroutine> replaces deprecated
+# <experimental/coroutine> which was removed in MSVC 14.40+/VS 2025).
+set_target_properties(${PLUGIN_NAME} PROPERTIES CXX_STANDARD 20)
 
 # Source include directories and library dependencies. Add any plugin-specific
 # dependencies here.
@@ -97,7 +98,7 @@ target_include_directories(${TEST_RUNNER} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_link_libraries(${TEST_RUNNER} PRIVATE flutter_wrapper_plugin)
 target_link_libraries(${TEST_RUNNER} PRIVATE gtest_main gmock)
 target_link_libraries(${TEST_RUNNER} PRIVATE windowsapp)
-set_target_properties(${TEST_RUNNER} PROPERTIES CXX_STANDARD 17)
+set_target_properties(${TEST_RUNNER} PROPERTIES CXX_STANDARD 20)
 # flutter_wrapper_plugin has link dependencies on the Flutter DLL.
 add_custom_command(TARGET ${TEST_RUNNER} POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy_if_different
