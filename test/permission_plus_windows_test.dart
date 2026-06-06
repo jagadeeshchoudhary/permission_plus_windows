@@ -72,9 +72,11 @@ class FakePermissionPlusHostApi implements PermissionPlusHostApi {
   }
 
   @override
+  // ignore: non_constant_identifier_names
   String get pigeonVar_messageChannelSuffix => '';
 
   @override
+  // ignore: non_constant_identifier_names
   BinaryMessenger? get pigeonVar_binaryMessenger => null;
 }
 

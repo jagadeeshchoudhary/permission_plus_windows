@@ -1,7 +1,7 @@
 name: permission_plus_windows
 description: "Windows implementation of the permission_plus plugin."
 
-version: 0.1.0
+version: 0.1.1
 
 homepage: https://github.com/jagadeeshchoudhary/permission_plus_windows
 repository: https://github.com/jagadeeshchoudhary/permission_plus_windows/tree/main
